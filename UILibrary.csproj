@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F7E51636-6CBD-4B22-90F0-51F65EBD77DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UILibrary</RootNamespace>
+    <AssemblyName>UILibrary</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\grantedIcon.png" />
+    <Content Include="Assets\notGrantedIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncUIOperation.cs" />
+    <Compile Include="ConsentDialogManager.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DocumentTrackingConsentPage.xaml.cs">
+      <DependentUpon>DocumentTrackingConsentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorCodes.cs" />
+    <Compile Include="Exception.cs" />
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Models\ConsentUIResult.cs" />
+    <Compile Include="Models\DocumentTrackingConsentPageContext.cs" />
+    <Compile Include="Models\PolicyPickerPageContext.cs" />
+    <Compile Include="Models\ProtectionScheme.cs" />
+    <Compile Include="Models\ProtectionSchemeType.cs" />
+    <Compile Include="Models\ServiceUrlConsentPageContext.cs" />
+    <Compile Include="PolicyPicker.cs" />
+    <Compile Include="PolicyPickerPage.xaml.cs">
+      <DependentUpon>PolicyPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyViewerControl.xaml.cs">
+      <DependentUpon>PolicyViewerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceUrlConsentPage.xaml.cs">
+      <DependentUpon>ServiceUrlConsentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIUtils.cs" />
+    <Compile Include="ViewModels\PolicyPickerViewModel.cs" />
+    <Compile Include="ViewModels\ProtectionSchemeViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\bg-BG\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\cs-CZ\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\da-DK\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\de-DE\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\el-GR\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\en-US\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\es-ES\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\et-EE\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\fi-FI\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\fr-FR\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\hi-IN\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\hr-HR\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\hu-HU\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\id-ID\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\it-IT\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\ja-JP\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\kk-KZ\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\ko-KR\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\lt-LT\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\lv-LV\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\ms-MY\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\nb-NO\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\nl-NL\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\pl-PL\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\pt-BR\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\pt-PT\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\ro-RO\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\ru-RU\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\sk-SK\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\sl-SI\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\sr-Latn-CS\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\sv-SE\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\th-TH\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\tr-TR\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\uk-UA\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\vi-VN\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\zh-CN\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources\zh-TW\LibResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DocumentTrackingConsentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PolicyPickerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PolicyViewerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ServiceUrlConsentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.RightsManagement">
+      <HintPath>D:\AzureAD\aadrm_client\private\thinclient\winmodern\native\Apps\WP81\UILibG\WP Microsoft RMS SDK v4.1\x86\Microsoft.RightsManagement.winmd</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetPlatformIdentifier)' == '' ">
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

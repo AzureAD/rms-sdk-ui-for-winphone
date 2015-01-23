@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="Microsoft.RightsManagement.UI.RMSCustomControls.ServiceUrlConsentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Microsoft.RightsManagement.UI.RMSCustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="ConsentTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="60"></Setter>
+            <Setter Property="TextAlignment" Value="Left"></Setter>
+            <Setter Property="Margin" Value="10,0,0,10"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+        </Style>
+        <Style x:Key="ConsentMessageStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Margin" Value="10,0,0,10"></Setter>
+            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+            <Setter Property="FontFamily" Value="Segoe UI"></Setter>
+        </Style>
+        <Style x:Key="ConsentMessageUrlStyle" TargetType="TextBlock" BasedOn="{StaticResource ConsentMessageStyle}"> 
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Margin" Value="10,10,0,20"></Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="RootGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" x:Name="ConsentTitleTextBlock" x:Uid="/Microsoft.RightsManagement.UI.RMSCustomControls/LibResources/ConsentTitle" 
+                   Style="{StaticResource ConsentTitleStyle}" >
+        </TextBlock>
+        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto" >
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="ConsentLicenseMessage" x:Uid="/LibResources/ConsentLicenseMessage"
+                   Style="{StaticResource ConsentMessageStyle}">
+                </TextBlock>
+
+                <TextBlock x:Name="MessageTextBlock"
+                   Style="{StaticResource ConsentMessageUrlStyle}">
+                </TextBlock>
+                <TextBlock x:Name="ConsentTrackingMessage" x:Uid="/LibResources/ConsentTrackingMessage"
+                   Style="{StaticResource ConsentMessageStyle}">
+
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <CheckBox x:Name="ShowAgainCheckBox" x:Uid="/LibResources/ShowAgainCheckBox" 
+                      Margin="20,10,0,10"></CheckBox>
+        </StackPanel>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="AcceptButton" x:Uid="/LibResources/AcceptButton" Click="AcceptButtonClick">
+                <AppBarButton.Icon>
+                    <SymbolIcon Symbol="Accept" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+
+            <AppBarButton x:Name="DeclineButton" x:Uid="/LibResources/DeclineButton"  Click="DeclineButtonClick">
+                <AppBarButton.Icon>
+                    <SymbolIcon Symbol="Cancel" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
