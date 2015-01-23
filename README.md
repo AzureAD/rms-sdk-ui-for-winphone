@@ -31,6 +31,7 @@ You must have downloaded and/or installed following software
    X86 platform to build for UILibrary project.
 5. In UILibrary project, add reference to X86 version of Microsoft.RightsManagement.winmd
 6. Build the UILibrary project.
+7. Start using this UILibrary project in your Windows Phone app.
 
 ## License
 
