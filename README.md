@@ -5,6 +5,11 @@ The UI Library for Microsoft RMS SDK v4.1 for Windows Phone provides the UI, imp
 
 ##Features
 
+This library provides following UI components:
+* **PolicyPicker**: Shows a policy picker screen, where the user can choose RMS template for protection of data or files.
+* **PolicyViewer**: Shows the permissions that the user has on a RMS protected data or file.
+* **DocumentTrackingConsent and ServiceUrlConsent**: Shows a consent about tracking of the document by sender or IT administrator, that the user can accept/reject.
+
 ##Contributing
 
 All code is licensed under MICROSOFT SOFTWARE LICENSE TERMS, MICROSOFT RIGHTS MANAGEMENT SERVICE SDK UI LIBRARIES. We enthusiastically welcome contributions and feedback. You can clone the repository and start contributing now.
