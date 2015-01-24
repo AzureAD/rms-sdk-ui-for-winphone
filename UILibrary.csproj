@@ -245,12 +245,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.RightsManagement">
-      <HintPath>D:\AzureAD\aadrm_client\private\thinclient\winmodern\native\Apps\WP81\UILibG\WP Microsoft RMS SDK v4.1\x86\Microsoft.RightsManagement.winmd</HintPath>
-    </Reference>
-  </ItemGroup>
+  </ItemGroup> 
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
