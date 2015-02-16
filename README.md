@@ -26,17 +26,30 @@ You must have downloaded and/or installed following software
 * Windows Phone 8.1 development tools
 * The Microsoft Rights Management SDK 4.1 package for Windows Phone
 
+You must an Azure Active Directory tenant/domain where your app is registered. To learn more about creating Azure Active Directory
+tenant, registering an app in Azure AD, see [here](https://github.com/AzureADSamples/NativeClient-WindowsPhone8.1)
 
 ### Setting up development environment
 
 1. Download Microsoft RMS SDK v4.1 for Windows Phone from [here](http://www.microsoft.com/en-us/download/details.aspx?id=45487). 
-2. Import UI library project (UILibrary.csproj) under ./rms-sdk-ui-for-winphone/ directory from GitHub.
-3. Open the UILibrary.csproj in Visual Studio 2013.
-4. In Visual Studio Solution Explorer, right click solution file, select Properties. In the Configuration Properties, select
-   X86 platform to build for UILibrary project.
-5. In UILibrary project, add reference to X86 version of Microsoft.RightsManagement.winmd
-6. Build the UILibrary project.
-7. Start using this UILibrary project in your Windows Phone app.
+2. Import UI library project (UILibrary.csproj) under ./rms-sdk-ui-for-winphone/ directory from GitHub to your local machine.
+3. Import RMSSampleApp project under ./rms-sdk-ui-for-winphone/ directory from GitHub to your local machine.
+4. Open RMSSampleApp.sln file in Visual Studio 2013. Add UILibrary.csproj to the same solution if it is not already added.
+5. In Visual Studio Solution Explorer, right click solution file, select Properties. In the Configuration Properties, select
+   X86 platform to build for both projects.
+6. In both projects, add reference to X86 version of Microsoft.RightsManagement.winmd from previously downloaded Microsoft RMS SDK v4.1.
+7. In RMSSampleApp project, add a project reference to UILibrary.
+8. Open AuthenticationManager.cs file, in the constructor you will see below code.
+
+			 // e.g. this.Clientid = "7608DFAF-F20E-58C6-82C3-08AFEE79D74E";
+             this.Clientid = "[Client id for RMSSampleApp that you get from Azure AD portal e.g. 7608DFAF-F20E-58C6-82C3-08AFEE79D74E]";            
+
+            // e.g. this.Redirect = @"https://authorize/";
+            this.Redirect = "[Redirect uri for RMSSampleApp that is registered in your Azure AD tenant]";   
+			
+   Fill the place holders with appropriate client id and redirect uri. 
+			
+9. Set RMSSampleApp.csproj as a StartUp project, build the entire solution. Press F5 to run the sample.
 
 ## License
 
