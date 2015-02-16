@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="RMSSampleApp.ProtectedTextConsumptionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RMSSampleApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rmsCustomControls="using:Microsoft.RightsManagement.UI.RMSCustomControls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ScrollViewer Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalScrollMode="Auto" 
+                      VerticalScrollMode="Auto" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  
+                      ZoomMode="Disabled">
+        <TextBlock  TextWrapping="WrapWholeWords" TextTrimming="None" FontSize="15" FontFamily="Segoe UI"  
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="TextContent" 
+                    Margin="10,0"></TextBlock>                  
+        </ScrollViewer>
+        
+        <rmsCustomControls:PolicyViewerControl x:Name="ViewerControl" IsOpen="False"  
+                                               Margin="0,0,0,-10" Padding="0" HorizontalAlignment="Stretch" 
+                                               VerticalContentAlignment="Top" >
+        </rmsCustomControls:PolicyViewerControl>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="PorectionButton"  Label="Protection" Click="ProtectionButtonClicked" Icon="ProtectedDocument">                   
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
